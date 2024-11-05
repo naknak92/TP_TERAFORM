@@ -1,8 +1,8 @@
-TP Terraform & Ansible - Infrastructure as Code (IaC)
+# TP Terraform & Ansible - Infrastructure as Code (IaC)
 
 Ce projet est une démonstration de l'infrastructure as code (IaC) utilisant Terraform et Ansible pour automatiser le déploiement et la configuration de ressources dans un environnement cloud. Il comprend plusieurs étapes, chacune visant à déployer et configurer des services spécifiques, incluant des conteneurs et une base de données.
 
-Structure du projet
+## Structure du projet
 
 etape1 : Initialisation et configuration de l'infrastructure de base.
 
@@ -14,7 +14,7 @@ etape4 : Reprise de l'étape 2 sur AWS, intégrant Ansible pour la gestion de la
 
 etape5 : Déploiement d'une application WordPress avec un serveur Nginx, PHP-FPM et une base de données MariaDB, le tout dans un environnement conteneurisé sur AWS.
 
-Prérequis
+## Prérequis
 
 Terraform : pour provisionner l'infrastructure.
 
@@ -22,16 +22,9 @@ Ansible : pour configurer les serveurs une fois provisionnés.
 
 Docker : pour gérer les conteneurs dans certaines étapes.
 
-AWS CLI (facultatif) : pour interagir avec AWS en ligne de commande.
-
 Assurez-vous d'avoir les bonnes permissions et configurations pour déployer sur AWS, et que Terraform et Ansible sont installés sur votre machine.
 
-Configuration
-
-Clonez le dépôt :
-
-git clone https://github.com/naknak92/TP_TERAFORM.git
-cd TP_TERAFORM
+## Configuration
 
 Initialisez les modules Terraform et téléchargez les providers :
 
@@ -43,7 +36,7 @@ Pour chaque étape, utilisez Terraform pour appliquer les configurations :
 
 terraform apply
 
-Étapes
+## Étapes
 
 Étape 1
 
@@ -65,7 +58,7 @@ Reprise de l'étape 2 avec Terraform et gestion de la configuration avec Ansible
 
 Déploiement d'un serveur WordPress avec Nginx, PHP-FPM et MariaDB sur des conteneurs Docker sur AWS.
 
-Notes
+## Notes
 
 Gestion des fichiers volumineux : Certains fichiers de configuration et providers sont exclus du dépôt pour respecter les limites de GitHub. Assurez-vous de bien initialiser les dépendances de Terraform et Docker.
 
