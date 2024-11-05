@@ -1,0 +1,21 @@
+- hosts: php_fpm
+  become: yes
+  tasks:
+    - name: Installer PHP-FPM et les extensions PHP
+      yum:
+        name:
+          - php-fpm
+          - php-mysqlnd
+        state: present
+
+    - name: Télécharger WordPress
+      get_url:
+        url: https://wordpress.org/latest.tar.gz
+        dest: /tmp/wordpress.tar.gz
+
+    - name: Extraire WordPress
+      unarchive:
+        src: /tmp/wordpress.tar.gz
+        dest: /var/www/html
+        remote_src: yes
+

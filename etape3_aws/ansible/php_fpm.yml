@@ -1,0 +1,14 @@
+- hosts: php_fpm
+  become: yes
+  tasks:
+    - name: Installer PHP-FPM
+      yum:
+        name: php-fpm
+        state: present
+
+    - name: Démarrer PHP-FPM et activer au démarrage
+      service:
+        name: php-fpm
+        state: started
+        enabled: yes
+

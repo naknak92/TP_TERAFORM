@@ -1,0 +1,22 @@
+- hosts: db
+  become: yes
+  tasks:
+    - name: Installer MariaDB
+      yum:
+        name: mariadb-server
+        state: present
+
+    - name: Démarrer et activer MariaDB
+      service:
+        name: mariadb
+        state: started
+        enabled: yes
+
+    - name: Configurer la base de données
+      mysql_user:
+        name: testuser
+        password: testpassword
+        priv: 'testdb.*:ALL'
+        host: '%'
+        state: present
+

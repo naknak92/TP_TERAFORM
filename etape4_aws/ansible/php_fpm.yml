@@ -1,0 +1,16 @@
+- hosts: php_fpm
+  become: yes
+  tasks:
+    - name: Installer PHP-FPM et modules PHP nécessaires
+      yum:
+        name:
+          - php-fpm
+          - php-mysqlnd  # Pour les connexions MySQL
+        state: present
+
+    - name: Démarrer et activer PHP-FPM
+      service:
+        name: php-fpm
+        state: started
+        enabled: yes
+

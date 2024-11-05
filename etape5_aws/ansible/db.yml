@@ -1,0 +1,27 @@
+- hosts: db
+  become: yes
+  tasks:
+    - name: Installer MariaDB
+      yum:
+        name: mariadb-server
+        state: present
+
+    - name: Démarrer et activer MariaDB
+      service:
+        name: mariadb
+        state: started
+        enabled: yes
+
+    - name: Créer la base de données pour WordPress
+      mysql_db:
+        name: wordpress
+        state: present
+
+    - name: Créer l'utilisateur pour WordPress
+      mysql_user:
+        name: wp_user
+        password: wp_password
+        priv: 'wordpress.*:ALL'
+        host: '%'
+        state: present
+

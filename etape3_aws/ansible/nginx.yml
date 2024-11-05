@@ -1,0 +1,14 @@
+- hosts: nginx
+  become: yes
+  tasks:
+    - name: Installer Nginx
+      yum:
+        name: nginx
+        state: present
+
+    - name: Démarrer Nginx et activer au démarrage
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
