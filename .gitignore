@@ -1,1 +1,3 @@
 .terraform/
+etape2/data/mysql/ib_logfile0
+etape3_aws/terraform/.terraform/
